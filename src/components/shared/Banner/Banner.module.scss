@@ -1,0 +1,129 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.banner {
+  padding-top: 320px;
+  padding-bottom: 120px;
+  position: relative;
+
+  @media (max-width: $media-desktop) {
+    padding-top: 270px;
+  }
+  @media (max-width: $media-tablet) {
+    padding-top: 230px;
+  }
+  @media (max-width: $media-mobile) {
+    padding-top: 170px;
+    padding-bottom: 70px;
+  }
+
+  .bannerBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .bannerContainer {
+    @include container;
+
+    .bannerContent {
+      max-width: 610px;
+
+      @media (max-width: $media-tablet) {
+        max-width: 550px;
+      }
+      @media (max-width: $media-mobile) {
+        max-width: 450px;
+      }
+
+      .bannerOverhead {
+        margin-bottom: 38px;
+        padding: 9px 14px;
+        display: inline-flex;
+        background: linear-gradient(270deg, #F3D1C1 -3.75%, rgba(255, 178, 141, 0) 108.58%);
+
+        @media (max-width: $media-tablet) {
+          margin-bottom: 30px;
+        }
+        @media (max-width: $media-mobile) {
+          margin-bottom: 20px;
+        }
+        @media (max-width: $media-small-mobile) {
+          padding: 5px;
+        }
+
+        .bannerOverheadIcon {
+          margin-right: 15px;
+        }
+
+        .bannerOverheadText {
+          text-transform: uppercase;
+          font-size: 20px;
+          line-height: 24px;
+          letter-spacing: 5px;
+          color: $color-link;
+
+          @media (max-width: $media-mobile) {
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 4px;
+          }
+          @media (max-width: $media-small-mobile) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .bannerTitle {
+        margin-bottom: 38px;
+        font-size: 65px;
+        line-height: 77px;
+        font-weight: 700;
+        color: $color-primary;
+
+        @media (max-width: $media-tablet) {
+          margin-bottom: 30px;
+          font-size: 55px;
+          line-height: 67px;
+        }
+        @media (max-width: $media-mobile) {
+          margin-bottom: 20px;
+          font-size: 40px;
+          line-height: 50px;
+        }
+        @media (max-width: $media-mobile) {
+          margin-bottom: 15px;
+          font-size: 32px;
+          line-height: 37px;
+        }
+      }
+
+      .bannerText {
+        margin-bottom: 38px;
+
+        @media (max-width: $media-tablet) {
+          margin-bottom: 30px;
+        }
+        @media (max-width: $media-mobile) {
+          padding: 5px;
+          background-color: rgba(255,255,255, 0.6);
+        }
+
+        p {
+          font-size: $size-text-main;
+          line-height: 24px;
+          color: $color-link;
+
+          @media (max-width: $media-mobile) {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

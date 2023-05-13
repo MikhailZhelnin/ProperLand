@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -300%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  transition: all .3s ease-in-out;
+
+  &.mobileMenuActive {
+    left: 0;
+  }
+
+  .mobileMenuNav {
+    margin-bottom: 20px;
+
+    .mobileMenuNavList {
+      text-align: center;
+      list-style-type: none;
+
+      .mobileMenuNavListItem {
+        margin-bottom: 10px;
+
+        .mobileMenuNavListLink {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .mobileMenuContactButton {
+
+  }
+
+  .mobileMenuCloseButton {
+    position: absolute;
+    top: 51px;
+    right: 11px;
+    border: none;
+    background: transparent;
+
+    @media (max-width: $media-tablet) {
+      top: 32px;
+    }
+    @media (max-width: $media-mobile) {
+      top: 22px;
+    }
+  }
+}

@@ -1,6 +1,17 @@
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import {Provider} from "react-redux";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import {store, wrapper} from "@/store/store";
+
+import 'remixicon/fonts/remixicon.css'
+import '@/styles/globals.scss'
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
+
+export default wrapper.withRedux(App)

@@ -1,0 +1,92 @@
+@import "../../styles/variables";
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  max-width: 1400px;
+  width: 100%;
+  padding: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+
+  @media (max-width: $media-desktop) {
+    top: 0;
+    padding: 45px 18px;
+  }
+  @media (max-width: $media-tablet) {
+    padding: 25px 18px;
+  }
+  @media (max-width: $media-mobile) {
+    padding: 20px 18px;
+  }
+
+  .headerLogo {
+    flex-grow: 1;
+
+    @media (max-width: $media-mobile) {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    img {
+      @media (max-width: $media-mobile) {
+        margin-left: -30px;
+        transform: scale(0.8);
+      }
+    }
+
+  }
+
+  .headerNav {
+    margin-right: 60px;
+
+    @media (max-width: 1150px) {
+      display: none;
+    }
+
+    .headerNavList {
+      display: flex;
+      list-style-type: none;
+
+      .headerNavListItem {
+        margin-right: 50px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .headerNavListItemLink {
+          font-size: 20px;
+          line-height: 24px;
+          color: $color-content;
+          transition: color .2s ease-in-out;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .headerButton {
+    @media (max-width: 1150px) {
+      display: none;
+    }
+  }
+
+  .headerBurgerMenu {
+    display: none;
+    border: none;
+    background: transparent;
+
+    @media (max-width: 1150px) {
+      display: block;
+    }
+  }
+}

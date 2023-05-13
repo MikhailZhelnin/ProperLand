@@ -1,0 +1,61 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
+.button {
+  @include btn;
+  display: flex;
+
+  &.buttonPrimary {
+    @include btn-main;
+
+    span {
+      color: #FFFFFF;
+    }
+
+    .buttonIcon {
+      background-color: $color-secondary;
+    }
+  }
+  &.buttonSecondary {
+    @include btn-secondary;
+
+    .buttonIcon {
+      background-color: $color-primary;
+    }
+  }
+  &.buttonThird {
+    @include btn-third;
+
+    .buttonIcon {
+      background-color: $color-secondary;
+    }
+  }
+
+  .buttonText {
+    display: inline-block;
+    font-size: $size-button;
+    line-height: 23.5px;
+    font-weight: 500;
+    color: $color-primary;
+
+    @media (max-width: $media-small-mobile) {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  }
+  .buttonIcon {
+    position: relative;
+    margin-left: 10px;
+    min-width: 22px;
+    height: 22px;
+    background-color: #335B6B;
+    border-radius: 50%;
+
+    img {
+      position: absolute;
+      top: 48%;
+      left: 49%;
+      transform: translate(-49%, -48%);
+    }
+  }
+}
